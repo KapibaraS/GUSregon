@@ -6,7 +6,7 @@ from pydantic import BaseModel
 from fastapi.responses import JSONResponse
 
 from errors import REGONAPIError
-from search import REGONAPI, SERVICE_URL, USER_KEY
+from search import RegonAPI, SERVICE_URL, USER_KEY
 
 app = FastAPI()
 
@@ -32,13 +32,13 @@ class RegonData(BaseModel):
 
 @app.get("/regon/{nip}", response_model=RegonData)
 async def regon(nip: int):
-    api = REGONAPI(SERVICE_URL)
+    api = RegonAPI(SERVICE_URL)
     try:
         await api.login(USER_KEY)
         regon = await api.search(nip=nip)
     except REGONAPIError as e:
         return JSONResponse(content=jsonable_encoder(
-            {"error", f"{e.message}"},
+            {"error", e.message},
         ), status_code=400)
 
     return regon

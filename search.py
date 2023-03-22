@@ -22,7 +22,7 @@ def get_message_element(message, payload_num, path):
     return etree.fromstring(resp).xpath(path, namespaces=namespaces)
 
 
-class REGONAPI:
+class RegonAPI:
 
     def __init__(self, service_url):
         self.service_url = service_url
