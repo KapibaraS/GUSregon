@@ -1,0 +1,15 @@
+#In order to obtain the user key for the production environment, please send the application in the form of a simple
+#email to regon_bir@stat.gov.pl containing the following information:
+# - full name of the entity;
+# - entity's REGON number (or NIP number for persons who do not run a business activity)
+# - name and surname of the contact person;
+# - contact person's email address;
+# - landline phone number;
+# - (and / or) mobile number;
+# - the approximate number of end users who will simultaneously be using the Service. (Equivalent to the number
+# - of simultaneously running instances of the application on workstations or other end devices simultaneously
+#using the Service).
+# IP addresses from which your ICT systems will communicate. (Applies to situations when end users will connect
+#to BIR1 through the software provider's access server - section 3.6.3 of the "Technical Manual" titled
+#"Recommended Architecture"). In addition, when the IP address / pool of addresses is constant - we
+#recommen

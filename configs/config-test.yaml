@@ -1,0 +1,7 @@
+accessing:
+  user_key: "abcde12345abcde12345"
+  service_url: "https://wyszukiwarkaregontest.stat.gov.pl:443/wsBIR/UslugaBIRzewnPubl.svc"
+
+namespaces:
+    bir: "http://CIS/BIR/PUBL/2014/07"
+    pb: "http://CIS/BIR/2014/07"
