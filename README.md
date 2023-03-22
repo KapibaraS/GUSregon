@@ -1,4 +1,6 @@
-### create python venv and install requirements
+### [Create python venv](https://www.freecodecamp.org/news/how-to-setup-virtual-environments-in-python/)  
+    
+### install requirements
     pip install -r requirements.txt
 ### entrypoint
     python api.py

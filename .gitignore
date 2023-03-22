@@ -1,3 +1,4 @@
+/.idea/
 # Default ignored files
 /shelf/
 /workspace.xml
@@ -9,7 +10,6 @@
 *.xml
 GUSregion.iml
 __pycache__/
-/.idea
-.idea
 /GUSregon.iml
 /.name
+
