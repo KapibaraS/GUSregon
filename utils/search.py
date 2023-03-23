@@ -60,7 +60,8 @@ class RegonAPI:
         if not (regon or nip or krs or regons or nips or krss):
             raise REGONAPIError(
                 "You have to pass at least one of: "
-                "nip(s), regon(s) or krs(s) parameters.", 400
+                "nip(s), regon(s) or krs(s) parameters.",
+                400,
             )
 
         param = ""
