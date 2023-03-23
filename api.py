@@ -39,7 +39,7 @@ async def regon(nip: int):
     except REGONAPIError as e:
         return JSONResponse(
             content=jsonable_encoder(
-                {"error", e.message},
+                {"error": e.message},
             ),
             status_code=e.code,
         )
