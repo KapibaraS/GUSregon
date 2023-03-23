@@ -8,6 +8,10 @@
 #### example request local: 
     http://127.0.0.1:8000/regon/5261040828
 
+
+### or use docker
+    make run
+
 #### example response:
     {
 	"Regon": 331501,
@@ -26,4 +30,4 @@
 	"SilosID": 6,
 	"DataZakonczeniaDzialalnosci": "",
 	"MiejscowoscPoczty": "Warszawa"
-}
+    }
