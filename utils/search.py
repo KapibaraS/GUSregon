@@ -4,9 +4,9 @@ import logging
 import httpx
 from lxml import objectify, etree
 
-from envelops import FULL_REPORT_ENVELOPE, SEARCH_ENVELOPE, LOGIN_ENVELOPE
+from utils.envelops import SEARCH_ENVELOPE, LOGIN_ENVELOPE
 from errors import REGONAPIError
-from utils import _xml_to_json
+from utils.parsing import xml_to_json
 
 from config import CONFIG
 
@@ -112,7 +112,7 @@ class RegonAPI:
         except AttributeError:
             pass
 
-        return _xml_to_json(dane_obj)
+        return xml_to_json(dane_obj)
 
     async def login(self, user_key):
         msg = await self.call(LOGIN_ENVELOPE, user_key=user_key)

@@ -27,11 +27,11 @@ def _xml_element_to_json(xml_element, attributes):
         )
 
     return _flatten_attributes(
-        xml_element.tag, _xml_to_json(xml_element.getchildren()), attributes
+        xml_element.tag, xml_to_json(xml_element.getchildren()), attributes
     )
 
 
-def _xml_to_json(xml_object):
+def xml_to_json(xml_object):
     attributes = None
     if hasattr(xml_object, "attrib") and not xml_object.attrib == {}:
         attributes = xml_object.attrib
@@ -43,8 +43,8 @@ def _xml_to_json(xml_object):
         if len(xml_object) > 1 and all(
             xml_object[0].tag == item.tag for item in xml_object
         ):
-            return [_xml_to_json(attr) for attr in xml_object]
+            return [xml_to_json(attr) for attr in xml_object]
 
-        return dict([(item.tag, _xml_to_json(item)) for item in xml_object])
+        return dict([(item.tag, xml_to_json(item)) for item in xml_object])
 
     return Exception("Not a valid lxml object")

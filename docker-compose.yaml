@@ -11,7 +11,7 @@ services:
     restart: always
     ports:
       - 8000:8000
-    command: python -m api
+    command: python -m main
     environment:
       - PYTHONPATH=/app/
       - CONFIG_PATH=/app/configs/config-test.yaml

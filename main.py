@@ -6,7 +6,7 @@ from pydantic import BaseModel
 from fastapi.responses import JSONResponse
 
 from errors import REGONAPIError
-from search import RegonAPI, SERVICE_URL, USER_KEY
+from utils.search import RegonAPI, SERVICE_URL, USER_KEY
 
 app = FastAPI()
 
