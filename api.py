@@ -37,13 +37,17 @@ async def regon(nip: int):
         await api.login(USER_KEY)
         regon = await api.search(nip=nip)
     except REGONAPIError as e:
-        return JSONResponse(content=jsonable_encoder(
-            {"error", e.message},
-        ), status_code=400)
+        return JSONResponse(
+            content=jsonable_encoder(
+                {"error", e.message},
+            ),
+            status_code=e.code,
+        )
 
     return regon
 
 
 if __name__ == "__main__":
-  import uvicorn
-  uvicorn.run(app)
+    import uvicorn
+
+    uvicorn.run(app, host="0.0.0.0", port="8000")

@@ -22,9 +22,13 @@ def _xml_element_to_json(xml_element, attributes):
         return _flatten_attributes(xml_element.tag, float(xml_element), attributes)
 
     if isinstance(xml_element, objectify.StringElement):
-        return _flatten_attributes(xml_element.tag, str(xml_element).strip(), attributes)
+        return _flatten_attributes(
+            xml_element.tag, str(xml_element).strip(), attributes
+        )
 
-    return _flatten_attributes(xml_element.tag, _xml_to_json(xml_element.getchildren()), attributes)
+    return _flatten_attributes(
+        xml_element.tag, _xml_to_json(xml_element.getchildren()), attributes
+    )
 
 
 def _xml_to_json(xml_object):
@@ -36,7 +40,9 @@ def _xml_to_json(xml_object):
         return _xml_element_to_json(xml_object, attributes)
 
     if isinstance(xml_object, list):
-        if len(xml_object) > 1 and all(xml_object[0].tag == item.tag for item in xml_object):
+        if len(xml_object) > 1 and all(
+            xml_object[0].tag == item.tag for item in xml_object
+        ):
             return [_xml_to_json(attr) for attr in xml_object]
 
         return dict([(item.tag, _xml_to_json(item)) for item in xml_object])

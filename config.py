@@ -3,7 +3,8 @@ import os
 
 import trafaret as t
 
-CONFIG_PATH = os.environ.get('CONFIG_PATH') or './configs/config-test.yaml'
+ROOT_PATH = os.getcwd()
+CONFIG_PATH = os.environ.get("CONFIG_PATH") or ROOT_PATH + "/configs/config-test.yaml"
 
 schema = t.Dict(
     accessing=t.Dict(
